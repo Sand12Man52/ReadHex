@@ -1,6 +1,5 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Hex 
 {
@@ -8,12 +7,12 @@ public class Hex
     {
         try 
         {
-            File hox = new File("./ReadIt.txt");
-            Scanner sc = new Scanner(hox);
-            while(sc.hasNextLine()) 
-            { 
-             System.out.println(sc.nextLine());
-            }    
+            Files.readAllBytes(Paths.get("./ReadIt"));
+            byte[] hexData = Files.readAllBytes(Paths.get("./ReadIt"));
+            for (int i = 0; i < hexData.length; i++) 
+            {
+               System.out.printf("%x",hexData[i]); 
+            }
         } catch (Exception e) 
         {
             //TODO: handle exception
