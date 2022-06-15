@@ -11,7 +11,7 @@ public class Hex
             byte[] hexData = Files.readAllBytes(Paths.get("./ReadIt"));
             for (int i = 0; i < hexData.length; i++) 
             {
-               System.out.printf("%x",hexData[i]); 
+               System.out.printf("%x  ",hexData[i]); 
             }
         } catch (Exception e) 
         {
